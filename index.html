@@ -47,6 +47,7 @@
             border-radius: 40px;
             text-align: center;
             outline: none;
+            max-width: fit-content;
         }
         form label {
             font-size: 1.2rem;
@@ -84,6 +85,19 @@
         }
         h6 {
             text-align: center;
+        }
+        @media screen and (max-width:850px) {
+            body {
+                padding: 20px;
+                background-position-x: 75%;
+            }
+            form {
+            display: flex;
+            gap: 20px;
+            position: relative;
+            height: 10vh;
+            flex-direction: column;
+        }
         }
     </style>
 </head>
