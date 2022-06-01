@@ -4,8 +4,8 @@ const selectUnit = () => {
         let unitVal = unit.value;
         let weightValue = document.querySelector('#weight').value;
         let heightValue = document.querySelector('#height').value;
-        let BMI = Math.round(weightValue/(heightValue*heightValue));
-        let inCm = Math.round(weightValue/(((heightValue/100)*(heightValue)/100)));
+        let BMI = weightValue/(heightValue*heightValue);
+        let inCm = Math.round(weightValue/(((heightValue/100) * (heightValue/100))));
         let reselectUnit = document.querySelector('#reselect');
         let outputBox = document.querySelector('#inputTextOnContainer');
         let container = document.querySelector('#container');
@@ -42,7 +42,7 @@ const selectUnit = () => {
                     reselectUnit.innerHTML = 'Reset unit';
                     titleH1.innerText = randomMessageForNormal[rando];
             }
-                else if (BMI >= 30) {
+                else if (BMI > 25 && BMI <= 30) {
                     outputBox.innerText= `Overweight`;
                     container.style.backgroundColor = 'lightyellow';
                     container.style.visibility = 'visible';
@@ -90,7 +90,7 @@ const selectUnit = () => {
                     reselectUnit.innerHTML = 'Reset unit';
                     titleH1.innerText = randomMessageForNormal[rando];
             }
-                else if (inCm >= 30) {
+                else if (inCm > 25 && inCm <= 30) {
                     outputBox.innerText= `Overweight`;
                     container.style.backgroundColor = 'lightyellow';
                     container.style.visibility = 'visible';
@@ -119,5 +119,7 @@ const selectUnit = () => {
        }
            
        }
+       //console.log(BMI);
+       console.log(inCm);
     })
 }
