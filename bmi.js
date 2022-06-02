@@ -4,8 +4,8 @@ const selectUnit = () => {
         let unitVal = unit.value;
         let weightValue = document.querySelector('#weight').value;
         let heightValue = document.querySelector('#height').value;
-        let BMI = weightValue/(heightValue*heightValue);
-        let inCm = Math.round(weightValue/(((heightValue/100) * (heightValue/100))));
+        let BMI = weightValue/(heightValue*heightValue); //meter
+        let inCm = Math.round(weightValue/(((heightValue/100) * (heightValue/100)))); //cm
         let reselectUnit = document.querySelector('#reselect');
         let outputBox = document.querySelector('#inputTextOnContainer');
         let container = document.querySelector('#container');
@@ -35,7 +35,7 @@ const selectUnit = () => {
                     reselectUnit.innerHTML = 'Reset unit';
                     titleH1.innerText = randomMessageForUnderweight[rando];
             }
-                else if (BMI <= 25) {
+            else if (BMI <= 25) {
                     outputBox.innerText = `You're normal!`;
                     container.style.backgroundColor = 'lightgreen';
                     container.style.visibility = 'visible';
@@ -116,10 +116,9 @@ const selectUnit = () => {
                 container.style.background = 'lightcoral';
                 container.style.visibility = 'visible';
                 reselectUnit.innerHTML = 'Reset unit';
-       }
+            }
            
        }
-       //console.log(BMI);
-       console.log(inCm);
+
     })
 }
